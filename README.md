@@ -4,8 +4,8 @@
 ## Live Preview
 
 [https://gabe.net.br/projetos/lojacorr/](https://gabe.net.br/projetos/lojacorr/)
-User: admin@gabe.net.br
-Pass: 123456789
+- User: admin@gabe.net.br
+- Pass: 123456789
 
 ## 5.2.1.3	Teste
 I.	Criação de telas para um sistema utilizando Bootstrap/Materialize, Jquery e css3:
