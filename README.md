@@ -16,8 +16,7 @@ I.	Criação de telas para um sistema utilizando Bootstrap/Materialize, Jquery e
 - [x] e.	Tela de exibição do endereço dos usuários | (Utilizado: Bootstrap/Vue.js/css3)
 
 ## 5.2.2.3	Teste
-I.	Desenvolver um CRUD (CREATE, READ, UPDATE e DELETE). 
-II.	A aplicação deve conter: 
+I.	Desenvolver um CRUD (CREATE, READ, UPDATE e DELETE). A aplicação deve conter: 
 - [x] a.	Mecanismo de Login | (Utilizado: Laravel)
 - [x] b.	Cadastro, listagem e edição de usuário | (Utilizado: Laravel/Vue.js/Axios)
 - [x] c.	Cadastro e edição do cep do usuário | (Utilizado: Laravel/Vue.js/Axios)
