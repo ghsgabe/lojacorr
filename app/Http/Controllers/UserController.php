@@ -25,7 +25,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $mensagem = [
-            'required' => 'O campo :attribute é obrigatporio.',
+            'required' => 'O campo :attribute é obrigatório.',
             'cep.min'    => 'O campo cep precisa ter pelo menos 8 caracteres.',
             'between' => 'O campo :attribute precisa ter entre :min e :max caracteres.',
             'email.required' => 'Necessário um e-mail válido!',
@@ -46,27 +46,35 @@ class UserController extends Controller
     public function updatePass(Request $request, $id)
     {  
         $mensagem = [
-            'required' => 'O campo :attribute é obrigatporio.',
-            'password.min'    => 'O campo senha precisa ter pelo menos 8 caracteres.',
-            'confirmed' => 'A senha e a confirmação estão diferentes'
+            'required' => 'O campo :attribute é obrigatório.',
+            'password.min' => 'O campo senha precisa ter pelo menos 8 caracteres.',
+            'confirmed' => 'A senha e a confirmação estão diferentes',
         ];
         $this->validate($request, [            
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ], $mensagem);
         $user = User::find($id);
-                   
-        if($request->password == $request->password_confirmation){
-            $user->password = Hash::make($request->password);
-            $user->save();
-        }
-
+        $user->password = Hash::make($request->password);
         $user->save();
         return $request;
     }
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $user = User::find($id);
         $user->delete();
-        return '';
+        return $request;
+    }
+    public function cep(Request $request, $cep)
+    {
+        
+        $url = "http://viacep.com.br/ws/{$cep}/json/";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        
+        return $result;
     }
 }

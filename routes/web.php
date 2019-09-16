@@ -7,7 +7,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 //Users
-Route::get('/users', 'UserController@index')->name('users.table');
+Route::get('/users', 'UserController@index');
 Route::post('/users/update/{id}', 'UserController@update');
-Route::post('/users/updatepass/{id}', 'UserController@updatePass')->name('users.table');
-Route::get('/users/delete/{id}', 'UserController@destroy')->name('users.table');
+Route::post('/users/updatepass/{id}', 'UserController@updatePass');
+Route::get('/users/delete/{id}', 'UserController@destroy');
+Route::get('/users/cep/{cep}', 'UserController@cep');

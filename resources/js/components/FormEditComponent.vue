@@ -60,22 +60,6 @@
         </div>
     </div>
 </template>
-<style>
-div#newandeditform > div{
-    top: 20%;
-    position: fixed;
-    left: 30%;
-    width: 40%;
-}
-div#newandeditform {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-}
-</style>
 <script>
     export default {
     props:['userEdit'],
@@ -107,13 +91,12 @@ div#newandeditform {
             onClickBack() {
                 this.$emit('back');
             },
-            viaCep(){  
-                axios.defaults.headers.common = {};              
-                axios.get(`https://viacep.com.br/ws/${this.userEdit.cep}/json/`).then((response) => {
+            viaCep(){        
+                axios.get(`/users/cep/${this.userEdit.cep}`).then((response) => {
                     this.userEdit.street = response.data.logradouro;
                 }).catch(error => {
                     this.userEdit.street = '';
-                });
+                }); 
             }
         }
     }

@@ -5,7 +5,7 @@
                 <div class="card-header">Cadastrar</div>
 
                 <div class="card-body">
-                    <form method="POST" id="form_cadastro" action="/register" v-on:submit.prevent="newUser()">
+                    <form method="POST" id="form_cadastro" action="" v-on:submit.prevent="newUser()">
                         <input type="hidden" name="_token" :value="csrf">
 
                         <div class="form-group row">
@@ -77,22 +77,6 @@
         </div>
     </div>
 </template>
-<style>
-div#newandeditform > div{
-    top: 20%;
-    position: fixed;
-    left: 30%;
-    width: 40%;
-}
-div#newandeditform {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-}
-</style>
 <script>
     export default {
         data() {
@@ -135,13 +119,12 @@ div#newandeditform {
             onClickBack() {
                 this.$emit('back');
             },
-            viaCep(){  
-                axios.defaults.headers.common = {};              
-                axios.get(`https://viacep.com.br/ws/${this.cep}/json/`).then((response) => {
-                   this.street = response.data.logradouro;
+            viaCep(){         
+                axios.get(`/users/cep/${this.cep}`).then((response) => {
+                    this.street = response.data.logradouro;
                 }).catch(error => {
-                    this.userEdit.street = '';
-                });
+                    this.street = '';
+                }); 
             }
         }
     }

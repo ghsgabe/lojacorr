@@ -27,22 +27,6 @@
         </div>
     </div>
 </template>
-<style>
-div#newandeditform > div{
-    top: 20%;
-    position: fixed;
-    left: 30%;
-    width: 40%;
-}
-div#newandeditform {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-}
-</style>
 <script>
     export default {
     props:['userEdit'],

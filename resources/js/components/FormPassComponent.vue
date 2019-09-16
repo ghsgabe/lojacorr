@@ -5,7 +5,7 @@
                 <div class="card-header">Editar Senha</div>
 
                 <div class="card-body">
-                    <form method="POST" action="" v-on:submit.prevent="update()">
+                    <form method="POST" action="" v-on:submit.prevent="updatePass()">
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" :value="csrf">
 
@@ -43,22 +43,6 @@
         </div>
     </div>
 </template>
-<style>
-div#newandeditform > div{
-    top: 20%;
-    position: fixed;
-    left: 30%;
-    width: 40%;
-}
-div#newandeditform {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-}
-</style>
 <script>
     export default {
     props:['userEdit'],
@@ -72,7 +56,7 @@ div#newandeditform {
         mounted() {
         },
         methods: {
-            update() {    
+            updatePass() {    
                 const params = {
                     password: document.getElementById("password").value,
                     password_confirmation: document.getElementById("password-c").value
