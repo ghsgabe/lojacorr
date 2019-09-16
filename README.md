@@ -4,8 +4,8 @@
 ## Live Preview
 
 [https://gabe.net.br/projetos/lojacorr/](https://gabe.net.br/projetos/lojacorr/)
-### User: admin@gabe.net.br
-### Pass: 123456789
+User: admin@gabe.net.br
+Pass: 123456789
 
 ## 5.2.1.3	Teste
 I.	Criação de telas para um sistema utilizando Bootstrap/Materialize, Jquery e css3:
@@ -21,7 +21,7 @@ I.	Desenvolver um CRUD (CREATE, READ, UPDATE e DELETE). A aplicação deve conte
 - [x] b.	Cadastro, listagem e edição de usuário | (Utilizado: Laravel/Vue.js/Axios)
 - [x] c.	Cadastro e edição do cep do usuário | (Utilizado: Laravel/Vue.js/Axios)
 - [x] d.	Busca do endereço baseado no cep através da API (https://viacep.com.br/) | (Utilizado: Laravel/Vue.js/Axios/cURL)
-- [x] e.	Gravar o retorno na base de dados e vincular ao usuário |  (Utilizado: Laravel/Vue.js)
+- [x] e.	Gravar o retorno na base de dados e vincular ao usuário |  (Utilizado: Laravel)
 
 ## 5.2.2.3 Bônus
 - [x] a.	Deploy em hospedagem compartilhada |  (Utilizado: Hostgator)
